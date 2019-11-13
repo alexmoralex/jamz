@@ -1,0 +1,133 @@
+<div id="enter">
+  <div class="container">
+
+    <div class="row justify-content-center" id="selection" style="padding-top: 1%">
+      <div class="col-2">
+        <select onchange="val()" class="custom-select my-1 mr-sm-2" id="user-select">
+          <option selected value="0">Select an option</option>
+          <option value="1">Band</option>
+          <option value="2">Place</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row scroll" id="session" style="display: none; margin-top: 3%">
+      <div class="col jumbotron">
+        <h2>Login</h2>
+
+        <form>
+        <div class="form-group">
+          <label for="inlineFormInputGroup">Username</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">@</div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">⚿</div>
+            </div>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>  
+        </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+          </div>
+          <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+      </div>
+
+      <div class="col" style="text-align: center">
+        <div class="rotate" id="singer-user">
+          <h2 class="text-enter-image blink">BΔND</h2>
+          <img src="assets/singer.jpg" alt="singer" width=80%>
+        </div>
+        <div class="rotate" id="waiter-user">
+          <h2 class="text-enter-image blink">PLΔCE</h2>
+          <img src="assets/waiter.jpg" alt="waiter" width=80%>
+        </div>
+      </div>
+
+      <div class="col jumbotron">
+        <div>
+        <h2>Register</h2>
+
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="inlineFormInputGroup">Username</label>
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter username">
+          </div> 
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password">
+            <br>
+            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Repeat Password">
+            <small id="passwordHelpInline" class="text-muted">
+              Must be 8-20 characters long.
+            </small>  
+          </div> 
+          <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="image-enter">
+    <img src="assets/enter-band1.jpg" alt="enter" width=100%>
+    <div class="container image-text-enter fade-in2">
+      <div class="row">
+        <div class="col-auto">
+          <h4 style="color: #ee041f">Do you have a band but you don't know where to play?</h4>
+          <h4 style="color: #ee041f">Do you have restaurant/bar and you want live music?</h4>
+          <h4 style="color: #ee041f">JΔMZ is here for you! Select the type of user you are and get started!</h4>
+        </div>
+        <div class="col" style="margin: auto">
+          <h4 style="color: #ee041f">Or if you're just looking for where to go tonight, go to 
+          <a href="/shows" style="color: #ee041f"><b>SHOWS</b></a> and choose!</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function val() {
+  sel = document.getElementById("user-select").value;
+  ses = document.getElementById("session")
+  im = document.getElementById("image-enter")
+  full = document.getElementById("enter")
+  waiter = document.getElementById("waiter-user")
+  singer = document.getElementById("singer-user")
+
+
+  if (sel == 0) {
+    ses.style.display = 'none';
+    im.style.display = 'block';
+    full.style.background = '#fefefe';
+  } else {
+    ses.style.display = 'flex';
+    full.style.background = '#212429';
+    im.style.display = 'none';
+  }
+
+  if (sel == 1) {
+    singer.style.display = 'block';
+    waiter.style.display = 'none';
+  } else if (sel == 2) {
+    waiter.style.display = 'block';
+    singer.style.display = 'none';
+  }
+}
+</script>
